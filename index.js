@@ -19,6 +19,59 @@ const client = new Client();
 
 // Surveille le status
 client.on('ready', () => {
+  console.log(client.guilds.cache.find(r => console.log(r.id, r.name))) // 708431087998861333 BOT
+  g = client.guilds.cache.filter(g => g.name === 'Admin');
+  // let guild = client.guilds..cache.find(guild => guild.name === "Discord.js Official");
+  let guild = client.guilds.cache.find(guild => guild.name === "BOT");
+  console.log(guild)
+  
+  // // const myMembers = guild.members.cache.map(m => console.log(m)); // OK
+  // const myRoles = guild.roles.cache;
+  // myRoles.map(r => {
+  //   console.log("ROLES:")
+  //   console.log(r.guild.roles.cache)
+  // 
+  //   console.log("----")
+  //   // console.log(u.guild.user)
+  // })
+  
+  constGuildRoles = guild.roles.cache.map(r => r.name)
+  // console.log(constGuildRoles)
+  
+  let adminRole = guild.roles.cache.find(role => role.name == "Admin");
+
+  // const myMembers = guild.members.cache.map(m => console.log(m)); // OK
+  const myMembers = guild.members.cache;
+  myMembers.map(u => {
+    // console.log("USER:")
+    console.log(u)
+    // console.log(u.user)
+    // console.log(u.user.id)
+    // console.log(u.user.username)
+    // console.log(u.user.bot)
+    // console.log("----")
+    // console.log(u.guild.user)
+    if(u.roles.cache.has(adminRole.id)) {
+      console.log(`Yay, the author of the message has the role!`);
+      u.setNickname("[admin] " + u.user.username, "Set admin nick to " + u.user.username ) 
+    } else {
+      console.log(`Nope, noppers, nadda.`);
+    }
+  })
+  
+  
+  // console.log(myMembers)
+  
+  
+  // const guildNames = client.guilds.cache.map(g => g.name).join("\n")
+  // console.log(guildNames)
+
+  //console.log(client.guilds.cache)
+  // console.log("Guild Admin:")
+  // console.log(g)
+  
+  // const hasModRole = guild.members.roles.some(role => acceptedRoles.includes('Admin'));
+  // console.log("hasModRole", hasModRole)
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
