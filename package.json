@@ -1,0 +1,30 @@
+{
+  "name": "DiscordGuildNicknameBot",
+  "version": "0.0.1",
+  "description": "A discord bot that set nicknames according to pre-defined roles",
+  "main": "index.js",
+  "engines": {
+    "node": "10.x"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theophile06/DiscordGuildNickname.git"
+  },
+  "keywords": [
+    "bot",
+    "discord"
+  ],
+  "author": "T2006",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/theophile06/DiscordGuildNickname/issues"
+  },
+  "homepage": "https://github.com/theophile06/DiscordGuildNickname#readme",
+  "dependencies": {
+    "discord.js": "^12.2.0"
+  }
+}
