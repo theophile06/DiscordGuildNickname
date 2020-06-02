@@ -127,7 +127,7 @@ client.on('guildMemberUpdate', (oldMember, newMember) => {
 // En cas de nouveaux arrivés...
 client.on('guildMemberAdd', member => {
   // On envoie le message à un canal désigné, ici "gere-bot"
-  const channel = member.guild.channels.find(ch => ch.name === 'gere-bot');
+  // const channel = member.guild.channels.find(ch => ch.name === 'gere-bot');
   // Si on ne trouve pas le canal, on fait rien
   if (!channel) return;
   // Autrement, on envoie le message dans le canal (plouf!)
